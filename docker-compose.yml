@@ -1,0 +1,31 @@
+# Define Docker Compose version.
+version: "3"
+
+# Define all the containers.
+services:
+  # Frontend Container.
+  server:
+    build: .
+    image: dockernode
+    environment:
+      - PORT=8080
+    expose:
+      - 8081
+    ports:
+     - "8081:8080"
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
+    command: npm run server
+  client:
+    image: dockernode
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/usr/app/client
+      - /usr/app/client/node_modules
+    links:
+      - server
+    command: npm run client
