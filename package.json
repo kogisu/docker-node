@@ -13,6 +13,7 @@
   "author": "kent ogisu",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "create-react-app": "^2.1.3",
     "express": "^4.16.4"
   },

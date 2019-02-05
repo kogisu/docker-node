@@ -1,12 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 
 // Constants
 const PORT = process.env.PORT || 8080;
 // const HOST = '0.0.0.0';
 
-//middleware
 // App
 const app = express();
+
+//Middleware
+app.use(cors());
+
 console.log('environment: ', app.get('env'));
 
 app.get('/api/customer', (req, res) => {

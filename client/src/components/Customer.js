@@ -19,8 +19,8 @@ class Customer extends Component {
     // console.log('customers: ', customers);
     if (customers.ok) {
       const body = await customers.json();
-      this.setState({customers: body}, () => {
-        console.log('customers fetched: ', customers);
+      this.setState({customer: body}, () => {
+        console.log('customers fetched: ', body);
       });
     }
   }
